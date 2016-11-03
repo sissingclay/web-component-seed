@@ -1,3 +1,5 @@
+'use strict';
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6,12 +8,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-let SimpleElement = function (_HTMLElement) {
+var SimpleElement = function (_HTMLElement) {
   _inherits(SimpleElement, _HTMLElement);
 
   _createClass(SimpleElement, [{
     key: 'template',
-    get: function () {
+    get: function get() {
       return '#simple-element-template';
     }
 
@@ -19,7 +21,7 @@ let SimpleElement = function (_HTMLElement) {
 
   }], [{
     key: 'observedAttributes',
-    get: function () {
+    get: function get() {
       return ['data-info'];
     }
   }]);
@@ -52,12 +54,12 @@ let SimpleElement = function (_HTMLElement) {
   }, {
     key: 'render',
     value: function render() {
-      const mainTest = (document._currentScript || document.currentScript).ownerDocument;
+      var mainTest = (document._currentScript || document.currentScript).ownerDocument;
 
       if ('content' in document.createElement('template')) {
         // Good to go!
-        const t = mainTest.querySelector(this.template);
-        const instance = t.content.cloneNode(true);
+        var t = mainTest.querySelector(this.template);
+        var instance = t.content.cloneNode(true);
         this.appendChild(instance);
       } else {
         // Use old templating techniques or libraries.
