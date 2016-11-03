@@ -1,0 +1,27 @@
+{
+  "name": "web-component-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-es2015-classes": "^6.18.0",
+    "html-inline": "^1.2.0",
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "js": "babel ./src/simple-element.js --plugins transform-es2015-classes --out-file ./demo/simple-element-es5.js",
+    "inlinejs": "html-inline -i ./src/simple-element.html -o ./demo/simple-element.html -b demo",
+    "build": "npm run js && npm run inlinejs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sissingclay/web-component-seed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sissingclay/web-component-seed/issues"
+  },
+  "homepage": "https://github.com/sissingclay/web-component-seed#readme"
+}
